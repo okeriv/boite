@@ -28,5 +28,6 @@ export function listenHost(core: Core, flags: Flags): string {
 }
 
 function isLoopbackHost(host: string): boolean {
-  return host === 'localhost' || host === '::1' || /^127\.\d+\.\d+\.\d+$/.test(host);
+  const octet = '(?:0|[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-5])';
+  return host === 'localhost' || host === '::1' || new RegExp(`^127\\.${octet}\\.${octet}\\.${octet}$`).test(host);
 }
