@@ -3,7 +3,6 @@ import type { Core } from './core.ts';
 import type { Flags } from './main.ts';
 
 // Loaded with the server graph, so the policy check stays out of the startup entry.
-
 /**
  * Where the core binds. A `--host` or a `--lan` on the command line always wins,
  * because the person who typed it meant it; with neither, the stored
